@@ -21,7 +21,7 @@ const jobList = [
 ]
 
 const jobs = jobList.map(job => (
-  <div className={`column is-full ${ExperienceStyles.job}`}>
+  <div className={`${ExperienceStyles.job}`}>
     <div className={`has-text-weight-strong ${ExperienceStyles.header}`}>
       <h5>{job.company}</h5>
       <h6>{job.date}</h6>
@@ -32,14 +32,16 @@ const jobs = jobList.map(job => (
 
 const Experience = props => {
   return (
-    <section className="section" className={ExperienceStyles.container}>
+    <section  className={`section is-size-7 is-size-4-tablet is-size-3-desktop is-paddingless ${ExperienceStyles.container}`}>
       <div className="container">
         <h1
           className={`title is-3 is-spaced has-text-white has-text-weight-medium ${ExperienceStyles.sectionTitle}`}
         >
           Experience
         </h1>
-        {jobs}
+        <div className={`columns is-centered`}>
+          <div className="column is-three-fifth-desktop is-60-tablet">{jobs}</div>
+        </div>
       </div>
     </section>
   )

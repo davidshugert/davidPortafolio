@@ -1,14 +1,4 @@
 .container {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-}
-.heroText {
-  color: red;
-  height: 100%;
-  align-items: center;
-}
-.heroImage {
-  justify-content: center;
-  margin: auto 0px ;
+  max-width: 980px;
+  padding: 0px;
 }
