@@ -1,3 +1,31 @@
+@mixin sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
 .footer {
   margin-top: 3rem;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  mix-blend-mode: difference;
+}
+.table {
+  list-style: none;
+  li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    color: black;
+    @include sm {
+      padding: 0px 5px 0px 5px !important;
+    }
+  }
+}
+.contactLink {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: complement($color: grey);
+  }
 }

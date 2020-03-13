@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import headerStyle from "./header.module.scss"
 
 const NavbarItem = ({ page, name }) => (
   <Link className="navbar-item" to={`${page}`}>
@@ -42,7 +43,7 @@ const Header = () => {
   const [isNavActive, toggleNavBar] = useState(false)
   return (
     <nav
-      className="is-fixed-top"
+      className={`is-fixed-top ${headerStyle.navbar}`}
       role="navigation"
       aria-label="main navigation"
     >

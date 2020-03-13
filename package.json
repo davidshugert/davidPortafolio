@@ -16,11 +16,13 @@
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sass": "^2.1.29",
+    "gatsby-source-contentful": "2.1.86",
     "gatsby-source-filesystem": "^2.1.46",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0",
     "react-typist": "^2.0.5"
   },
   "devDependencies": {
@@ -38,7 +40,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd /.env gatsby develop",
+    "develop": "env-cmd .env gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
