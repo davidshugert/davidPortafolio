@@ -8,7 +8,7 @@ import Experience from "../components/Experience"
 import Projects from "../components/Projects"
 
 
-import "./styles.scss"
+import "./Styles.scss"
 
 const BlogIndex = () => {
   return (
