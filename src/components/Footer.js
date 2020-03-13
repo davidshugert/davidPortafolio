@@ -16,7 +16,7 @@ const Footer = () => {
       }
     }
   `)
-  const iconSize = window.innerWidth < 580 ? "1em":"2em"
+  const iconSize = "1.5em"
   return (
     <footer className={`footer is-size-4 is-size-4-tablet is-size-7-mobile ${footerStyles.footerContainer}`}>
       <p>
