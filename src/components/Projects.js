@@ -23,7 +23,6 @@ const Projects = props => {
     }
   `)
   const projectsList = data.allContentfulProjects.nodes
-  console.log(projectsList)
   return (
     <section
       className={`section is-size-7 is-size-5-tablet is-size-4-desktop is-paddingless ${ProjectsStyles.container}`}

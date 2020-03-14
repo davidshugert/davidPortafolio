@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import footerStyles from "./footer.module.scss"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { IoIosDocument } from "react-icons/io"
+import styled from "styled-components"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -16,25 +17,42 @@ const Footer = () => {
       }
     }
   `)
+  const Icon = styled.a`
+    text-decoration: none;
+    color: black;
+    :hover{
+      color:grey;
+    }
+  `
   const iconSize = "1.5em"
   return (
-    <footer className={`footer is-size-4 is-size-4-tablet is-size-7-mobile ${footerStyles.footerContainer}`}>
+    <footer
+      className={`footer is-size-4 is-size-4-tablet is-size-7-mobile ${footerStyles.footerContainer}`}
+    >
       <p>
         Created by {data.site.siteMetadata.author.name}, ©{" "}
         {new Date().getFullYear()}
       </p>
       <ul className={` ${footerStyles.table}`}>
         <li>
-          <FaGithub size={iconSize}/>
+          <Icon href="https://github.com/davidshugert">
+            <FaGithub size={iconSize} />
+          </Icon>
         </li>
         <li>
-          <FaLinkedinIn size={iconSize} />
+          <Icon href="https://www.linkedin.com/in/david-shugert/">
+            <FaLinkedinIn size={iconSize} />
+          </Icon>
         </li>
         <li>
-          <IoIosDocument size={iconSize} />
+          <Icon href="/DavidShugert2020.pdf">
+            <IoIosDocument size={iconSize} />
+          </Icon>
         </li>
       </ul>
-      <Link to="/contact"><p className={footerStyles.contactLink}>Contact Me</p></Link>
+      <Link to="/contact">
+        <p className={footerStyles.contactLink}>Contact Me</p>
+      </Link>
     </footer>
   )
 }
