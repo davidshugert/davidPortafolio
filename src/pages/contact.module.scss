@@ -1,0 +1,45 @@
+@mixin md {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.section {
+  padding-left: 5em !important;
+  @include md {
+    padding-left: 2em !important;
+  }
+}
+
+.name {
+  width: 300px !important;
+  @include md {
+    width: 200px !important;
+  }
+}
+.email {
+  width: 400px !important;
+  @include md {
+    width: 300px !important;
+  }
+  @include sm {
+    width: 225px !important;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
+}
+.message {
+  width: 550px;
+  @include md {
+    width: 450px !important;
+  }
+  @include sm {
+    width: 350px !important;
+  }
+}
