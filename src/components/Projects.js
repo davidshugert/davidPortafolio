@@ -6,7 +6,7 @@ import ProjectsStyles from "./projects.module.scss"
 const Projects = props => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProjects {
+      allContentfulProjects(limit: 3) {
         nodes {
           title
           smallDescription {
@@ -25,22 +25,25 @@ const Projects = props => {
   const projectsList = data.allContentfulProjects.nodes
   return (
     <section
-      className={`section is-size-7 is-size-5-tablet is-size-4-desktop is-paddingless ${ProjectsStyles.container}`}
+      className={`section is-size-7 is-size-6-tablet is-size-6-desktop is-paddingless ${ProjectsStyles.container}`}
     >
       <h1 className={`is-3 is-spaced has-text-weight-medium`}>Projects</h1>
       <div className={ProjectsStyles.cardContainer}>
         {projectsList.map(project => {
           return (
             <div className={`card ${ProjectsStyles.card}`}>
-              <div className="card-content">
-                <p className="title is-4">{project.title}</p>
-                <figure class="">
+              <div className={`card-content ${ProjectsStyles.cardContent}`}>
+                <figure class={ProjectsStyles.figure}>
                   <img
                     src={project.projectImage.resize.src}
+                    className={ProjectsStyles.img}
                     alt={project.projectImage.title}
                   />
                 </figure>
-                <div className="content">
+                <p className={"title is-5 " + ProjectsStyles.title}>
+                  {project.title}
+                </p>
+                <div className={`content `}>
                   {project.smallDescription.smallDescription}
                 </div>
               </div>

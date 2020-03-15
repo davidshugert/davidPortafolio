@@ -1,11 +1,55 @@
+@mixin md {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: 1051px) {
+    @content;
+  }
+}
 .container {
   background-color: rgba(210, 209, 209, 0.8);
   display: grid;
   color: black;
 }
 .card {
-  max-width: 200px;
+  width: 350px !important;
+  height: 400px !important;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 8px 11px -9px #000000;
+  box-shadow: 6px 8px 11px -9px #000000;
+  @include md {
+    height: 300px !important;
+    width: 250px !important;
+  }
 }
 .cardContainer {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @include md {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em !important;
+}
+.figure {
+  text-align: center;
+  max-height: 150px;
+}
+.title {
+}
+.img {
+  max-height: 150px;
 }
