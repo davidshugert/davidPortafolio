@@ -5,7 +5,7 @@ import ExperienceStyles from "./experience.module.scss"
 
 const jobs = jobs =>
   jobs.map(job => (
-    <div className={`${ExperienceStyles.job}`}>
+    <div className={`${ExperienceStyles.job}`} key={job.node.company}>
       <div className={`has-text-weight-strong ${ExperienceStyles.header}`}>
         <h5>{job.node.company}</h5>
         <h6>{job.node.date}</h6>

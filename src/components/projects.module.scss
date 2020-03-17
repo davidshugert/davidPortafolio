@@ -8,20 +8,22 @@
     @content;
   }
 }
-.container {
-  background-color: rgba(210, 209, 209, 0.8);
-  display: grid;
+.section {
   color: black;
+  background-color: rgba(210, 209, 209, 0.8);
+}
+.container {
+  display: grid;
 }
 .card {
-  width: 350px !important;
+  width: 300px !important;
   height: 400px !important;
   border: 1px solid lightgray;
   border-radius: 5px;
   -webkit-box-shadow: 6px 8px 11px -9px #000000;
   box-shadow: 6px 8px 11px -9px #000000;
   @include md {
-    height: 300px !important;
+    height: 250px !important;
     width: 250px !important;
   }
 }
@@ -49,7 +51,21 @@
   max-height: 150px;
 }
 .title {
+  color: #4a4a4a;
+  text-decoration: underline;
+  padding: 0.5em 0px;
+  margin-bottom: 0px !important;
+  margin-left: 50px;
 }
 .img {
   max-height: 150px;
+}
+.button {
+  max-width: 150px;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
 }

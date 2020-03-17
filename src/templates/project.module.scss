@@ -1,0 +1,18 @@
+.img {
+  max-width: 450px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section {
+  background-color: var(--light-grey);
+  padding: 1em 0em;
+}

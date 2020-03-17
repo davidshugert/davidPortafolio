@@ -5,10 +5,8 @@ import Layout from "../components/Layout"
 import Head from "../components/Head"
 import Hero from "../components/Hero"
 import Experience from "../components/Experience"
-import Projects from "../components/Projects"
+import Projects from "../components/ProjectsSection"
 
-
-import "./Styles.scss"
 
 const BlogIndex = () => {
   return (

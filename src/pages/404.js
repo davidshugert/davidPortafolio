@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import Head from "../components/Head"
 
 const random404 = [
   {
@@ -80,6 +81,7 @@ const NotFoundPage = () => {
   const selected404 = random404[randomNumber]
   return (
     <>
+    <Head title="404 Page" />
       <Layout>
         <Container
           color={selected404.color}
