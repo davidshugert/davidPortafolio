@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
-import React, { useEffect } from "react"
-import { ProductCard } from "react-ui-cards"
+import React from  "react"
+// import { ProductCard } from "react-ui-cards"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 
@@ -10,13 +10,6 @@ const Container = styled.section`
 `
 const Projects = ({ data }) => {
   const projects = data.allContentfulProjects.nodes
-  // useEffect(() => {
-  //   Array.from(
-  //     document.getElementsByClassName("styles__price-tag___UwO7P")
-  //   ).forEach(e => {
-  //     e.style.display = "none"
-  //   })
-  // }, [])
   return (
     <Layout className="container">
       <h1>My Projects</h1>
@@ -24,12 +17,13 @@ const Projects = ({ data }) => {
         {projects.map(project => {
           return (
             <Link to={`/projects/${project.slug}`} key={project.id}>
-              <ProductCard
+              {/* <ProductCard
                 photos={[project.projectImage.resize.src]}
                 productName={project.title}
                 description={project.smallDescription.smallDescription}
+                price=""
                 url="/"
-              />
+              /> */}
             </Link>
           )
         })}
