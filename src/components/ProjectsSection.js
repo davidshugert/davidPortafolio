@@ -1,10 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { ProductCard } from "react-ui-cards"
 
 import ProjectsStyles from "./projects.module.scss"
-import ProjectCard from "./ProjectCard"
+import { useEffect } from "react"
 
 const ProjectsSection = props => {
+  useEffect(() => {
+    Array.from(
+      document.getElementsByClassName("styles__price-tag___UwO7P")
+    ).forEach(e => {
+      e.style.display = "none"
+    })
+  }, [])
   const data = useStaticQuery(graphql`
     query {
       allContentfulProjects(limit: 3) {
@@ -38,33 +46,13 @@ const ProjectsSection = props => {
         <div className={ProjectsStyles.cardContainer}>
           {projectsList.map(project => {
             return (
-              // <Link to={`/projects/${project.slug}`}>
-              //   <div
-              //     className={`card ${ProjectsStyles.card}`}
-              //     key={project.title}
-              //   >
-              //     <div className={`card-content ${ProjectsStyles.cardContent}`}>
-              //       <figure className={ProjectsStyles.figure}>
-              //         <img
-              //           src={project.projectImage.resize.src}
-              //           className={ProjectsStyles.img}
-              //           alt={project.projectImage.title}
-              //         />
-              //       </figure>
-              //       <p className={"title is-5 "}>{project.title}</p>
-              //       <div className={`content `}>
-              //         {project.smallDescription.smallDescription}
-              //       </div>
-              //     </div>
-              //   </div>
-              // </Link>
-              <ProjectCard
-                title={project.title}
-                description={project.smallDescription.smallDescription}
-                imgSrc={project.projectImage.resize.src}
-                slug={project.slug}
-                key={project.slug}
-              ></ProjectCard>
+              <Link to={`/projects/${project.slug}`} key={project.id}>
+                <ProductCard
+                  photos={[project.projectImage.resize.src]}
+                  productName={project.title}
+                  description={project.smallDescription.smallDescription}
+                />
+              </Link>
             )
           })}
         </div>

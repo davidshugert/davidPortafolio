@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 const Container = styled.section`
   display: flex;
+  justify-content: center;
 `
 const Projects = ({ data }) => {
   const projects = data.allContentfulProjects.nodes
@@ -14,7 +15,6 @@ const Projects = ({ data }) => {
       document.getElementsByClassName("styles__price-tag___UwO7P")
     ).forEach(e => {
       e.style.display = "none"
-      console.log(e)
     })
   }, [])
   return (
@@ -23,9 +23,8 @@ const Projects = ({ data }) => {
       <Container>
         {projects.map(project => {
           return (
-            <Link to={`/projects/${project.slug}`}>
+            <Link to={`/projects/${project.slug}`} key={project.id}>
               <ProductCard
-                key={project.id}
                 photos={[project.projectImage.resize.src]}
                 productName={project.title}
                 description={project.smallDescription.smallDescription}

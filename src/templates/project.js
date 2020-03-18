@@ -19,7 +19,6 @@ export const query = graphql`
 `
 
 const ProjectTemplate = props => {
-  console.log(props)
   const options = {
     renderNode: {
       "embedded-asset-block": node => {

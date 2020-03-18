@@ -15,7 +15,6 @@ const Hero = () => {
       }
     }
   `)
-  console.log(data)
   return (
     <div className={`container ${heroStyles.container}`}>
       <div

@@ -43,8 +43,39 @@ module.exports = {
         trackingId: "UA-159486532-1D",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `David Shugert`,
+        short_name: `David Sh.`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon:'src/favicon/android-chrome-512x512.png'
+        // icons: [
+        //   {
+        //     src: "src/favicon/android-chrome-192x192.png",
+        //     sizes: "192x192",
+        //     type: "image/png",
+        //   },
+        //   {
+        //     src: "src/favicon/android-chrome-512x512.png",
+        //     sizes: "512x512",
+        //     type: "image/png",
+        //   },
+        //   {
+        //     src: "src/favicon/favicon-16x16.png",
+        //     sizes: "16x16",
+        //     type: "image/png",
+        //   },
+        //   {
+        //     src: "src/favicon/favicon-32x32.png",
+        //     sizes: "32x32",
+        //     type: "image/png",
+        //   },
+        // ],
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
