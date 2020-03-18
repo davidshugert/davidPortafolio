@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import headerStyle from "./header.module.scss" 
+import headerStyle from "./header.module.scss"
 
 const NavbarItem = ({ page, name }) => (
   <Link className="navbar-item" to={`${page}`}>
@@ -28,7 +28,7 @@ const Header = () => {
             name
           }
           navBar {
-            links{
+            links {
               name
               url
             }
@@ -38,7 +38,7 @@ const Header = () => {
     }
   `)
   const navItems = data.site.siteMetadata.navBar.links.map(link => (
-    <NavbarItem page={link.url} name={link.name}></NavbarItem>
+    <NavbarItem page={link.url} name={link.name} key={link.name}></NavbarItem>
   ))
   const [isNavActive, toggleNavBar] = useState(false)
   return (
@@ -49,7 +49,11 @@ const Header = () => {
     >
       <div className="navbar-brand">
         <Link className="navbar-item is-paddingless" to="/">
-          <img src="/images/Logo/cover.png" alt="Logo" className={headerStyle.logo} />
+          <img
+            src="/images/Logo/cover.png"
+            alt="Logo"
+            className={headerStyle.logo}
+          />
         </Link>
         <NavbarBurger
           active={isNavActive}

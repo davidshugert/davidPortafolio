@@ -37,13 +37,16 @@ const Contact = () => {
           </h2>
         </section>
         <FormContainer>
-          <FormStyled  data-netlify="true">
+          <FormStyled data-netlify="true">
             <div class="field">
-              <label class="label" for="name">Name:</label>
+              <label class="label" for="name">
+                Name:
+              </label>
               <div class="control">
                 <input
                   className={`input ${contactStyles.name}`}
                   type="text"
+                  id="name"
                   name="name"
                   required
                   placeholder="Text input"
@@ -52,12 +55,15 @@ const Contact = () => {
             </div>
 
             <div class="field">
-              <label class="label" for="email">Email:</label>
+              <label class="label" for="email">
+                Email:
+              </label>
               <div class="control has-icons-left has-icons-right">
                 <input
                   className={`input ${contactStyles.email}`}
                   type="email"
                   name="email"
+                  id="email"
                   required
                   placeholder="email@example.com"
                 />
@@ -65,12 +71,15 @@ const Contact = () => {
             </div>
 
             <div class="field">
-              <label class="label" for="message">Message:</label>
+              <label class="label" for="message">
+                Message:
+              </label>
               <div class="control" className={contactStyles.message}>
                 <textarea
                   className={`textarea`}
                   placeholder="Add your message here...."
                   name="message"
+                  id="message"
                   required
                 ></textarea>
               </div>
@@ -78,7 +87,9 @@ const Contact = () => {
 
             <div class="field is-grouped">
               <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
+                <button class="button is-link" type="submit">
+                  Submit
+                </button>
               </div>
             </div>
           </FormStyled>
