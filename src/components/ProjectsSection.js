@@ -6,13 +6,13 @@ import ProjectsStyles from "./projects.module.scss"
 import { useEffect } from "react"
 
 const ProjectsSection = props => {
-  useEffect(() => {
-    Array.from(
-      document.getElementsByClassName("styles__price-tag___UwO7P")
-    ).forEach(e => {
-      e.style.display = "none"
-    })
-  }, [])
+  // useEffect(() => {
+  //   Array.from(
+  //     document.getElementsByClassName("styles__price-tag___UwO7P")
+  //   ).forEach(e => {
+  //     e.style.display = "none"
+  //   })
+  // }, [])
   const data = useStaticQuery(graphql`
     query {
       allContentfulProjects(limit: 3) {

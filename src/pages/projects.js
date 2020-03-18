@@ -10,13 +10,13 @@ const Container = styled.section`
 `
 const Projects = ({ data }) => {
   const projects = data.allContentfulProjects.nodes
-  useEffect(() => {
-    Array.from(
-      document.getElementsByClassName("styles__price-tag___UwO7P")
-    ).forEach(e => {
-      e.style.display = "none"
-    })
-  }, [])
+  // useEffect(() => {
+  //   Array.from(
+  //     document.getElementsByClassName("styles__price-tag___UwO7P")
+  //   ).forEach(e => {
+  //     e.style.display = "none"
+  //   })
+  // }, [])
   return (
     <Layout className="container">
       <h1>My Projects</h1>
