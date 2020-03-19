@@ -1,18 +1,36 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const CardContainer = styled.div`
-  border: 1px solid black;
-  width: 300px;
-  height: 400px;
-  background-color: #ecf0f1;
+const Card = styled.div`
+  display: grid;
+  grid-template-columns: 250px;
+  grid-template-rows: 180px 250px;
+  grid-template-areas: "image" "text";
+  border-radius: 25px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  justify-items: center;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 15px;
+
+  :hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  }
 `
 const CardImage = styled.img`
-  width: 300px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  grid-area: image;
+  height: 100%;
 `
 const DescriptionContainer = styled.div`
-  background-color: grey;
+  grid-area: text;
+  margin: 15px;
 `
 const ProjectTitle = styled.h1`
   color: #2c3e50;
@@ -23,17 +41,16 @@ const ProjectTitle = styled.h1`
 const ProjectDescription = styled.p`
   color: #2c3e50;
 `
-const ProjectCard = ({ title, slug, description, imgSrc }) => {
-
+const ProjectCard = ({ title, slug, description, imgSrc, customeClass }) => {
   return (
-    <Link to={`/projects/${slug}`}>
-      <CardContainer>
+    <Link to={`/projects/${slug}`} className={customeClass}>
+      <Card>
         <CardImage src={imgSrc} alt={title} />
         <DescriptionContainer>
           <ProjectTitle>{title}</ProjectTitle>
           <ProjectDescription>{description}</ProjectDescription>
         </DescriptionContainer>
-      </CardContainer>
+      </Card>
     </Link>
   )
 }

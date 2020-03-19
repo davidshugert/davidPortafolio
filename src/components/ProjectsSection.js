@@ -1,8 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import ProjectCard from "./ProjectCard"
 // import { ProductCard } from "react-ui-cards"
 
-import ProjectsStyles from "./projects.module.scss"
+import ProjectsStyles from "./projectsSection.module.scss"
 
 const ProjectsSection = props => {
   const data = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ const ProjectsSection = props => {
   const projectsList = data.allContentfulProjects.nodes
   return (
     <section
-      className={`section is-size-6 is-paddingless ${ProjectsStyles.section}`}
+      className={`section is-size-6 is-paddingless  ${ProjectsStyles.section}`}
     >
       <section className={`container ${ProjectsStyles.container}`}>
         <h1
@@ -38,15 +39,14 @@ const ProjectsSection = props => {
         <div className={ProjectsStyles.cardContainer}>
           {projectsList.map(project => {
             return (
-              <Link to={`/projects/${project.slug}`} key={project.id}>
-                {/* <ProductCard
-                  photos={[project.projectImage.resize.src]}
-                  productName={project.title}
-                  description={project.smallDescription.smallDescription}
-                  price=""
-                  url="/"
-                /> */}
-              </Link>
+              <ProjectCard
+                title={project.title}
+                slug={project.slug}
+                description={project.smallDescription.smallDescription}
+                imgSrc={project.projectImage.resize.src}
+                customeClass={ProjectsStyles.ProjectCard}
+                key={project.slug}
+              />
             )
           })}
         </div>

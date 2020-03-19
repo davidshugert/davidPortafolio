@@ -1,20 +1,9 @@
 import React from "react"
 import heroStyles from "./hero.module.scss"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
-const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "images/home.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const Hero = data => {
+  console.log(data)
   return (
     <div className={`container ${heroStyles.container}`}>
       <div
@@ -35,3 +24,14 @@ const Hero = () => {
   )
 }
 export default Hero
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "src/images/home.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

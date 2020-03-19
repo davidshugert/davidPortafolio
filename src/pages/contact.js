@@ -41,48 +41,48 @@ const Contact = () => {
             <div class="field">
               <label class="label" for="name">
                 Name:
+                <div class="control">
+                  <input
+                    className={`input ${contactStyles.name}`}
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Text input"
+                  />
+                </div>
               </label>
-              <div class="control">
-                <input
-                  className={`input ${contactStyles.name}`}
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Text input"
-                />
-              </div>
             </div>
 
             <div class="field">
               <label class="label" for="email">
                 Email:
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    className={`input ${contactStyles.email}`}
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="email@example.com"
+                  />
+                </div>
               </label>
-              <div class="control has-icons-left has-icons-right">
-                <input
-                  className={`input ${contactStyles.email}`}
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  placeholder="email@example.com"
-                />
-              </div>
             </div>
 
             <div class="field">
               <label class="label" for="message">
                 Message:
+                <div class="control" className={contactStyles.message}>
+                  <textarea
+                    className={`textarea`}
+                    placeholder="Add your message here...."
+                    name="message"
+                    id="message"
+                    required
+                  ></textarea>
+                </div>
               </label>
-              <div class="control" className={contactStyles.message}>
-                <textarea
-                  className={`textarea`}
-                  placeholder="Add your message here...."
-                  name="message"
-                  id="message"
-                  required
-                ></textarea>
-              </div>
             </div>
 
             <div class="field is-grouped">
