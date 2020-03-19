@@ -1,6 +1,7 @@
 import React from "react"
 import heroStyles from "./hero.module.scss"
 import { graphql } from "gatsby"
+import HeroImage from "../../images/home.jpg"
 
 const Hero = data => {
   console.log(data)
@@ -9,11 +10,7 @@ const Hero = data => {
       <div
         className={`columns is-vcentered is-centered ${heroStyles.container}`}
       >
-        <img
-          src={"/images/home.jpg"}
-          className="column is-half"
-          alt="David´s Hero"
-        />
+        <img src={HeroImage} className="column is-half" alt="David´s Hero" />
         <p
           className={`column is-half is-size-3 is-size-4-mobile has-text-centered`}
         >
