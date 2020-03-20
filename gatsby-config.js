@@ -3,6 +3,7 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `David´s Portafolio`,
+    siteUrl: 'https://davidshugert.com',
     author: {
       name: `David Shugert`,
       summary: `Mexican Fullstack developer/creator.`,
@@ -51,7 +52,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon:'src/favicon/android-chrome-512x512.png'
+        icon: "src/favicon/android-chrome-512x512.png",
         // icons: [
         //   {
         //     src: "src/favicon/android-chrome-192x192.png",
@@ -77,5 +78,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
