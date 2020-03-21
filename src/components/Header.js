@@ -39,7 +39,9 @@ const Header = () => {
     }
   `)
   const navItems = data.site.siteMetadata.navBar.links.map(link => (
-  <NavbarItem page={link.url} name={link.name} key={link.name}>{link.name}</NavbarItem>
+    <NavbarItem page={link.url} name={link.name} key={link.name}>
+      {link.name}
+    </NavbarItem>
   ))
   const [isNavActive, toggleNavBar] = useState(false)
   return (
@@ -51,7 +53,7 @@ const Header = () => {
       <div className="navbar-brand">
         <Link className="navbar-item is-paddingless" to="/">
           <img
-            src="/images/Logo/cover.png"
+            src="/images/Logo/cover.webp"
             alt="Logo"
             className={headerStyle.logo}
           />

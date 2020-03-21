@@ -13,6 +13,7 @@
 .logo {
   max-height: 75px !important;
   @include desktop1 {
-    max-height: 2.75em !important;
+    max-height: 50px !important;
   }
+  margin-bottom: 0px;
 }
