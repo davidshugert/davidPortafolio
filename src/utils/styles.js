@@ -12,7 +12,7 @@ export const media = {
     }
   `,
   md: (...args) => css`
-    @media (max-width: 991px) {
+    @media (max-width: 1000px) {
       ${css(...args)}
     }
   `,

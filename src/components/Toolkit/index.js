@@ -3,6 +3,7 @@ import styled from "styled-components"
 import myTools from "./myTools"
 import Particles from "react-particles-js"
 import config from "./particleConfig.JS"
+import { media } from "../../utils/styles"
 
 const ToolkitSectionContainer = styled.section`
   width: 100%;
@@ -16,6 +17,12 @@ const ToolkitSectionContainer = styled.section`
 `
 const ToolkitContainer = styled.div`
   width: 1000px;
+  ${media.md`
+    width:700px;
+  `}
+  ${media.sm`
+    width:80%;
+  `}
   min-height: 200px;
   display: flex;
   flex-direction: row;
