@@ -37,7 +37,7 @@ const Contact = () => {
           </h2>
         </section>
         <FormContainer>
-          <FormStyled data-netlify="true">
+          <FormStyled data-netlify="true" netlify name="ContactForm">
             <div class="field">
               <label class="label" for="name">
                 Name:
