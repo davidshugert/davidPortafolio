@@ -20,7 +20,7 @@
   @include tablet() {
     max-height: 200px;
     height: 200px;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
   }
 }
 .heroImg {
@@ -29,12 +29,12 @@
   margin-top: -200px;
   z-index: 1;
   @include tablet() {
-    margin-top: -50px;
+    margin-top: -25px;
   }
 }
 .img {
   max-width: 450px;
-  @include tablet(){
+  @include tablet() {
     max-width: 80%;
   }
 }
@@ -78,6 +78,7 @@
   @include tablet() {
     box-shadow: none;
     margin-top: unset;
+    justify-content: start;
   }
 }
 .paragraph {

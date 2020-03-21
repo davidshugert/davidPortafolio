@@ -6,6 +6,7 @@ import Head from "../components/Head"
 import Hero from "../components/Hero"
 import Experience from "../components/Experience"
 import Projects from "../components/ProjectsSection"
+import ToolkitSection from "../components/Toolkit"
 
 
 const BlogIndex = () => {
@@ -15,6 +16,7 @@ const BlogIndex = () => {
       <Hero />
       <Experience />
       <Projects />
+      <ToolkitSection />
     </Layout>
   )
 }

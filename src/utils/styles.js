@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from "styled-components"
 
 export const media = {
   ws: (...args) => css`
@@ -6,18 +6,13 @@ export const media = {
       ${css(...args)}
     }
   `,
-  xs: (...args) => css`
+  sm: (...args) => css`
     @media (max-width: 767px) {
       ${css(...args)}
     }
   `,
-  sm: (...args) => css`
-    @media (max-width: 991px) {
-      ${css(...args)}
-    }
-  `,
   md: (...args) => css`
-    @media (max-width: 1199px) {
+    @media (max-width: 991px) {
       ${css(...args)}
     }
   `,
