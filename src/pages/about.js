@@ -14,7 +14,7 @@ const About = () => {
           node {
             myPhoto {
               title
-              fixed(width: 200, height: 200, quality: 100) {
+              fixed(width: 200, height: 200, quality: 70) {
                 src
               }
             }
