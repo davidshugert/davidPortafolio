@@ -11,7 +11,7 @@
   flex-shrink: 0;
   justify-content: space-around;
   padding-bottom: 2rem !important;
-  background-color: #f6f9fc !important;
+  background-color: var(--bg-color) !important;
 }
 .table {
   list-style: none;

@@ -10,7 +10,6 @@ const TypistStyled = styled(Typist)`
   text-transform: uppercase;
   margin-top: 1em;
   margin-bottom: 1em;
-
 `
 const Hero = data => {
   console.log(data)
@@ -28,7 +27,12 @@ const Hero = data => {
             Hello! I´m <b>David Shugert</b> a Fullstack Developer based in
             Mexico!
           </p>
-          <TypistStyled cursor={{ show: false }} avgTypingDelay={100} stdTypingDelay={15} className={`is-size-2 is-size-3-mobile`}>
+          <TypistStyled
+            cursor={{ show: false }}
+            avgTypingDelay={100}
+            stdTypingDelay={15}
+            className={`is-size-2 is-size-3-mobile`}
+          >
             <strong>I create </strong> Websites
             <Typist.Backspace count={9} delay={delay} />
             <span> Web Apps</span>

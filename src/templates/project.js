@@ -1,10 +1,16 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS } from "@contentful/rich-text-types"
 
 import Layout from "../components/Layout"
 import Head from "../components/Head"
 import projectStyles from "./project.module.scss"
+import projectHeroImg from "../images/projectBackground.jpg"
+import { IoMdArrowBack } from "react-icons/io"
+import { FaExternalLinkAlt } from "react-icons/fa"
+
+import styled from "styled-components"
 
 export const query = graphql`
   query($slug: String!) {
@@ -18,6 +24,29 @@ export const query = graphql`
   }
 `
 
+const Icon = styled.a`
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+  :hover {
+    color: grey;
+  }
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`
+const LinkStyled = styled(Link)`
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+  :hover {
+    color: grey;
+  }
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`
+const Text = ({ children }) => <p className={projectStyles.paragraph}>{children}</p>
 const ProjectTemplate = props => {
   const options = {
     renderNode: {
@@ -26,28 +55,46 @@ const ProjectTemplate = props => {
         const url = node.data.target.fields.file["en-US"].url
         return <img alt={alt} src={url} className={` ${projectStyles.img}`} />
       },
+      [BLOCKS.HEADING_1]: node => {
+        return <h1 className={`title is-2`}>{node.content[0].value}</h1>
+      },
+      [BLOCKS.PARAGRAPH]: (node, children) => {
+        return <Text>{children}</Text>
+      },
     },
   }
 
   return (
     <Layout>
+      <Head title={props.data.contentfulProjects.title} article={true} />
       <section className={projectStyles.section}>
-        <div className={`container ${projectStyles.container}`}>
-          <Head title={props.data.contentfulProjects.title} article={true} />
-          <div className={projectStyles.buttonContainer}>
-            <Link to="/projects">
-              <button className="button  is-link">Back</button>
-            </Link>
-            <a href={props.data.contentfulProjects.projectLink}>
-              <button className="button is-success is-light is-rounded">
-                Project Page
-              </button>
-            </a>
-          </div>
-          {documentToReactComponents(
-            props.data.contentfulProjects.richDescription.json,
-            options
-          )}
+        <div className={projectStyles.heroImageWrapper}>
+          <img
+            src={projectHeroImg}
+            alt="Project Hero"
+            className={projectStyles.heroImg}
+          />
+        </div>
+        <div className={`${projectStyles.container}`}>
+          <article className={projectStyles.article}>
+            <div className={projectStyles.buttonContainer}>
+              <LinkStyled to="/projects">
+                <IoMdArrowBack></IoMdArrowBack>
+                <span>&nbsp; Back to Projects</span>
+              </LinkStyled>
+
+              <Icon href={props.data.contentfulProjects.projectLink}>
+                <button className="button is-success  is-rounded">
+                  <span>Project Page &nbsp; </span>
+                  <FaExternalLinkAlt />
+                </button>
+              </Icon>
+            </div>
+            {documentToReactComponents(
+              props.data.contentfulProjects.richDescription.json,
+              options
+            )}
+          </article>
         </div>
       </section>
     </Layout>
