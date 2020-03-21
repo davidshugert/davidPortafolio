@@ -12,10 +12,14 @@
 .header {
   display: flex;
   justify-content: space-between;
+  color: white !important;
 }
 .sectionTitle {
   padding: 5px;
   text-decoration: underline;
+}
+.white{
+  color: white !important;
 }
 .job {
   padding-left: 3em;

@@ -1,0 +1,62 @@
+@mixin md {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+.aboutTitle {
+  margin: 1em auto;
+  text-align: center;
+  @include md {
+    text-align: unset;
+    margin-top: 1em;
+  }
+}
+.mainContainer {
+}
+.aboutMeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  @include md {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "photo title"
+      "message message";
+    border: 5px solid black;
+    border-radius: 20px;
+    max-width: 625px;
+    background-color: lightblue;
+    grid-row-gap: 0.8em;
+    margin: 10px auto;
+  }
+}
+
+.image {
+  border-radius: 25%;
+  object-fit: cover;
+  grid-area: photo;
+  justify-self: center;
+  align-self: center;
+}
+.locationText {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+.title {
+  grid-area: title;
+  font-size: 1.5em;
+  font-weight: 600;
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 10px;
+}
+.message {
+  grid-area: message;
+  justify-self: center;
+  align-self: center;
+  margin-top: 10px;
+}

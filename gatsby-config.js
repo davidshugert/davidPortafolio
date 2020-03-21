@@ -3,7 +3,7 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `David´s Portafolio`,
-    siteUrl: 'https://davidshugert.com',
+    siteUrl: "https://davidshugert.com",
     author: {
       name: `David Shugert`,
       summary: `Mexican Fullstack developer/creator.`,
@@ -26,6 +26,12 @@ module.exports = {
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     `gatsby-plugin-sharp`,

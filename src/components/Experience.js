@@ -5,12 +5,12 @@ import ExperienceStyles from "./experience.module.scss"
 
 const jobs = jobs =>
   jobs.map(job => (
-    <div className={`${ExperienceStyles.job}`} key={job.node.company}>
-      <div className={`has-text-weight-strong ${ExperienceStyles.header}`}>
-        <h5>{job.node.company}</h5>
-        <h6>{job.node.date}</h6>
+    <div className={`has-text-white ${ExperienceStyles.job}`} key={job.node.company}>
+      <div className={`has-text-white has-text-weight-strong ${ExperienceStyles.header}`}>
+        <h5 className={ExperienceStyles.white}>{job.node.company}</h5>
+        <h6 className={ExperienceStyles.white}>{job.node.date}</h6>
       </div>
-      <p className={ExperienceStyles.title}>{job.node.role}</p>
+      <p className={`is-size-7 is-size-4-desktop is-italic ${ExperienceStyles.title}`}>{job.node.role}</p>
     </div>
   ))
 
@@ -33,7 +33,7 @@ const Experience = props => {
   `)
   return (
     <section
-      className={`section is-size-7 is-size-5-tablet is-size-4-desktop is-paddingless ${ExperienceStyles.container}`}
+      className={`section is-size-6 is-size-5-tablet is-size-4-desktop is-paddingless ${ExperienceStyles.container}`}
     >
       <div className={`container ${ExperienceStyles.subContainer}`}>
         <h1

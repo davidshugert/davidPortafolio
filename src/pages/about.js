@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import aboutMeStyles from "./aboutMeStyles.module.scss"
 
 const PageTitle = styled.h1``
 const Content = styled.section``
@@ -11,12 +12,9 @@ const About = () => {
       allContentfulAboutMe {
         edges {
           node {
-            about {
-              about
-            }
             myPhoto {
               title
-              fixed(width: 200, quality: 100) {
+              fixed(width: 200, height: 200, quality: 100) {
                 src
               }
             }
@@ -29,22 +27,45 @@ const About = () => {
     allContentfulAboutMe: { edges },
   } = data
   const {
-    node: {
-      about: { about },
-      myPhoto,
-    },
+    node: { myPhoto },
   } = edges[0]
-  console.log(about)
-  console.log(myPhoto)
   return (
     <Layout>
-      <div className="container">
-        <PageTitle className={`title is-3 is-spaced  has-text-weight-medium`}>
+      <div className="" className={`container ${aboutMeStyles.mainContainer}`}>
+        <PageTitle className={`title is-3 is-spaced  has-text-weight-medium ${aboutMeStyles.aboutTitle}`}>
           About Me
         </PageTitle>
         <Content className={``}>
-          <img src={myPhoto.fixed.src} alt={myPhoto.title}/>
-          <p>{about}</p>
+          <div className={aboutMeStyles.aboutMeContainer}>
+            <img
+              src={myPhoto.fixed.src}
+              alt={myPhoto.title}
+              align="left"
+              className={`is-rounded ${aboutMeStyles.image}`}
+            />
+            <h3 className={aboutMeStyles.title}>
+              Hello, I´m David! A full-stack developer currently working in
+              <a href="https://goo.gl/maps/RrnDuu1AhNjzEQiW9">
+                <b className={aboutMeStyles.locationText}>
+                  {" "}
+                  Guadalajara, Mexico📍
+                </b>
+              </a>
+              .
+            </h3>
+            <p className={aboutMeStyles.message}>
+              I mostly work with Node and Javascript. I like to try new
+              frameworks and tools that would make my workflow and productivity
+              much faster. I consider myself a passionate hobbyist, tinkerer (I
+              studied mechatronics, I´m not afraid of hardware by any means😛)
+              and software developer with a multicultural and open perspective.
+              Geek by nature. I´ve had previous international experience by
+              working as a back-end and tooling developer. I enjoy developing
+              projects from scratch, especially designing, building and of
+              course programming them.
+            </p>
+          </div>
+          <section className="toolkitContainer"></section>
         </Content>
       </div>
     </Layout>
