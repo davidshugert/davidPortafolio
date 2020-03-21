@@ -5,7 +5,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: var(--bg-color);
 }
 :root {
   --light-grey: #dcdcdc;
+  --bg-color: #f6f9fc;
+  --bg-grey: #fbfbfb;
 }

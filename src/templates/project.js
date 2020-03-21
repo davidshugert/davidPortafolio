@@ -33,7 +33,7 @@ const ProjectTemplate = props => {
     <Layout>
       <section className={projectStyles.section}>
         <div className={`container ${projectStyles.container}`}>
-          <Head title={props.data.contentfulProjects.title} />
+          <Head title={props.data.contentfulProjects.title} article={true} />
           <div className={projectStyles.buttonContainer}>
             <Link to="/projects">
               <button className="button  is-link">Back</button>

@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import aboutMeStyles from "./aboutMeStyles.module.scss"
+import Head from "../components/Head"
 
 const PageTitle = styled.h1``
 const Content = styled.section``
@@ -31,8 +32,11 @@ const About = () => {
   } = edges[0]
   return (
     <Layout>
-      <div className="" className={`container ${aboutMeStyles.mainContainer}`}>
-        <PageTitle className={`title is-3 is-spaced  has-text-weight-medium ${aboutMeStyles.aboutTitle}`}>
+      <Head title="About Me" />
+      <div className={`container ${aboutMeStyles.mainContainer}`}>
+        <PageTitle
+          className={`title is-3 is-spaced  has-text-weight-medium ${aboutMeStyles.aboutTitle}`}
+        >
           About Me
         </PageTitle>
         <Content className={``}>
@@ -57,12 +61,15 @@ const About = () => {
               I mostly work with Node and Javascript. I like to try new
               frameworks and tools that would make my workflow and productivity
               much faster. I consider myself a passionate hobbyist, tinkerer (I
-              studied mechatronics, I´m not afraid of hardware by any means😛)
-              and software developer with a multicultural and open perspective.
-              Geek by nature. I´ve had previous international experience by
-              working as a back-end and tooling developer. I enjoy developing
-              projects from scratch, especially designing, building and of
-              course programming them.
+              studied mechatronics, I´m not afraid of hardware by any means
+              <span aria-label="Emoji with tongue out" role="img">
+                😛
+              </span>
+              ) and software developer with a multicultural and open
+              perspective. Geek by nature. I´ve had previous international
+              experience by working as a back-end and tooling developer. I enjoy
+              developing projects from scratch, especially designing, building
+              and of course programming them.
             </p>
           </div>
           <section className="toolkitContainer"></section>

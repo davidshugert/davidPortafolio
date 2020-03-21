@@ -3,6 +3,7 @@ import React from "react"
 import ProjectCard from "../components/ProjectCard"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import Head from "../components/Head"
 
 const Container = styled.section`
   width: 100%;
@@ -16,6 +17,7 @@ const Projects = ({ data }) => {
   const projects = data.allContentfulProjects.nodes
   return (
     <Layout>
+      <Head title="Projects" />
       <div className="container">
         <PageTitle
           className={`title is-3 is-spaced  has-text-weight-medium`}

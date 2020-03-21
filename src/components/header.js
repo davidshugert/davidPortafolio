@@ -11,6 +11,7 @@ const NavbarBurger = props => (
   <button
     onClick={props.toggleMenu}
     className={`button navbar-burger burger ${props.active ? "is-active" : ""}`}
+    aria-label="Nav Burger"
   >
     <span />
     <span />
@@ -38,7 +39,7 @@ const Header = () => {
     }
   `)
   const navItems = data.site.siteMetadata.navBar.links.map(link => (
-    <NavbarItem page={link.url} name={link.name} key={link.name}></NavbarItem>
+  <NavbarItem page={link.url} name={link.name} key={link.name}>{link.name}</NavbarItem>
   ))
   const [isNavActive, toggleNavBar] = useState(false)
   return (
