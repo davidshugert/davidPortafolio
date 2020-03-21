@@ -1,7 +1,7 @@
 import React from "react"
 import heroStyles from "./hero.module.scss"
 import { graphql } from "gatsby"
-import HeroImage from "../../images/home.jpg"
+import HeroImage from "../../images/home.webp"
 import Typist from "react-typist"
 import styled from "styled-components"
 
