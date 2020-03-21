@@ -1,0 +1,11 @@
+@mixin sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+.tooltip {
+  max-width: 250px !important;
+  @include sm(){
+      max-width: 150px !important;
+  }
+}

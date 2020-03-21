@@ -4,6 +4,8 @@ import myTools from "./myTools"
 import Particles from "react-particles-js"
 import config from "./particleConfig.JS"
 import { media } from "../../utils/styles"
+import ReactTooltip from "react-tooltip"
+import toolkitStyles from "./toolkit.module.scss"
 
 const ToolkitSectionContainer = styled.section`
   width: 100%;
@@ -44,7 +46,11 @@ const ToolContainer = styled.div`
 `
 const createToolContainer = tools => {
   return tools.map(tool => {
-    return <ToolContainer>{tool.name}</ToolContainer>
+    return (
+      <>
+        <ToolContainer data-tip={tool.description}>{tool.name}</ToolContainer>
+      </>
+    )
   })
 }
 const SectionTitle = styled.h1`
@@ -59,7 +65,10 @@ const ToolkitSection = params => {
       >
         My Toolkit
       </SectionTitle>
-      <ToolkitContainer>{createToolContainer(myTools)}</ToolkitContainer>
+      <ToolkitContainer>
+        {createToolContainer(myTools)}
+        <ReactTooltip clickable={true} effect="solid" type="info" className={toolkitStyles.tooltip} />
+      </ToolkitContainer>
     </ToolkitSectionContainer>
     // </Particles>
   )
