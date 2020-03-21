@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   background-color: var(--bg-color);
+  overflow-x: hidden
 }
 :root {
   --light-grey: #dcdcdc;
