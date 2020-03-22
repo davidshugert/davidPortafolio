@@ -38,7 +38,7 @@ const random404 = [
   },
 ]
 const StyledImage = styled.img`
-  width: 40%;
+  max-height:50vh;
 `
 const Title = styled.h1`
   font-weight: bold;

@@ -37,7 +37,7 @@ const Contact = () => {
           </h2>
         </section>
         <FormContainer>
-          <FormStyled method="post" action="/contact/thanks/" data-netlify="true" netlify name="ContactForm">
+          <FormStyled method="post" action="/contact/thanks/" netlify-honeypot="bot-field" data-netlify="true" name="ContactForm">
           <input type="hidden" name="form-name" value="contact" />
             <div className="field">
               <label className="label" htmlFor="name">
