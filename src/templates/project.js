@@ -50,8 +50,6 @@ const Text = ({ children }) => (
 )
 const LI = ({ children }) => <li className={projectStyles.li}>{children}</li>
 const ProjectTemplate = props => {
-  console.log(props.data.contentfulProjects.richDescription.json)
-  console.log(BLOCKS.EMBEDDED_ASSET)
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {

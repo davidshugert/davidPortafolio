@@ -12,7 +12,7 @@ const FormContainer = styled.section`
   vertical-align: middle;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 65vh;
 `
 const LinkStyled = styled(Link)`
   text-decoration: none;

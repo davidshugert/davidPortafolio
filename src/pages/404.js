@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import Head from "../components/Head"
@@ -61,7 +61,7 @@ const Container = styled.section`
   flex-direction: column;
   background-color: ${props => props.color || "white"};
   color: ${props => props.textColor || "black"};
-  padding: 2em 0em 2em 0em;
+  padding: 2em 0em 1em 0em;
   position: relative;
 `
 const Thanks = styled.a`
@@ -70,18 +70,21 @@ const Thanks = styled.a`
   @media (max-width: 768px) {
     font-size: 0.5em;
   }
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
+  margin-top: auto;
+  padding-top: 10px;
+  margin-right: auto;
   cursor: pointer;
 `
 const NotFoundPage = () => {
-  const randomNumber =
-    Math.floor(Math.random() * (random404.length - 1 - 0 + 1)) + 0
-  const selected404 = random404[randomNumber]
+  const [selected404, setSelected404] = useState(random404[1])
+  useEffect(() => {
+    const randomNumber =
+      Math.floor(Math.random() * (random404.length - 1 - 0 + 1)) + 0
+    setSelected404(random404[randomNumber])
+  }, [])
   return (
     <>
-    <Head title="404 Page" />
+      <Head title="404 Page" />
       <Layout>
         <Container
           color={selected404.color}

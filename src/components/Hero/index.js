@@ -12,7 +12,6 @@ const TypistStyled = styled(Typist)`
   margin-bottom: 1em;
 `
 const Hero = data => {
-  console.log(data)
   const delay = 500
   return (
     <div className={`container ${heroStyles.container}`}>
