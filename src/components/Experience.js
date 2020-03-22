@@ -8,9 +8,9 @@ const jobs = jobs =>
     <div className={`has-text-white ${ExperienceStyles.job}`} key={job.node.company}>
       <div className={`has-text-white has-text-weight-strong ${ExperienceStyles.header}`}>
         <h5 className={ExperienceStyles.white}>{job.node.company}</h5>
-        <h6 className={ExperienceStyles.white}>{job.node.date}</h6>
+        <h6 className={`is-size-7 is-size-4-desktop ${ExperienceStyles.white}`}>{job.node.date}</h6>
       </div>
-      <p className={`is-size-7 is-size-4-desktop is-italic ${ExperienceStyles.title}`}>{job.node.role}</p>
+      <p className={`is-size-7 is-size5-desktop is-italic ${ExperienceStyles.title}`}>{job.node.role}</p>
     </div>
   ))
 

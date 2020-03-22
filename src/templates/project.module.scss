@@ -82,5 +82,16 @@
   }
 }
 .paragraph {
-  max-width: 75%;
+  max-width: 85%;
+}
+.li {
+  width: 100% !important;
+}
+.ul {
+  width: auto !important;
+  text-align: center;
+  list-style: circle;
+  .li {
+    background-color: red !important;
+  }
 }

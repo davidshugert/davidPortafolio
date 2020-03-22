@@ -9,7 +9,6 @@ import projectStyles from "./project.module.scss"
 import projectHeroImg from "../images/projectBackground.jpg"
 import { IoMdArrowBack } from "react-icons/io"
 import { FaExternalLinkAlt } from "react-icons/fa"
-
 import styled from "styled-components"
 
 export const query = graphql`
@@ -46,20 +45,33 @@ const LinkStyled = styled(Link)`
   justify-content: center;
   align-items: center;
 `
-const Text = ({ children }) => <p className={projectStyles.paragraph}>{children}</p>
+const Text = ({ children }) => (
+  <p className={projectStyles.paragraph}>{children}</p>
+)
+const LI = ({ children }) => <li className={projectStyles.li}>{children}</li>
 const ProjectTemplate = props => {
+  console.log(props.data.contentfulProjects.richDescription.json)
+  console.log(BLOCKS.EMBEDDED_ASSET)
   const options = {
     renderNode: {
-      "embedded-asset-block": node => {
-        const alt = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img alt={alt} src={url} className={` ${projectStyles.img}`} />
+      [BLOCKS.EMBEDDED_ASSET]: node => {
+        if (node.data.target.fields) {
+          const alt = node.data.target.fields.title["en-US"]
+          const url = node.data.target.fields.file["en-US"].url
+          return <img alt={alt} src={url} className={` ${projectStyles.img}`} />
+        }
+        return <p>No image</p>
       },
       [BLOCKS.HEADING_1]: node => {
         return <h1 className={`title is-2`}>{node.content[0].value}</h1>
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         return <Text>{children}</Text>
+      },
+      [BLOCKS.UL_LIST]: (node, children) => {
+        console.log(node)
+        console.log(children)
+        return <ul className={projectStyles.ul}>{children}</ul>
       },
     },
   }

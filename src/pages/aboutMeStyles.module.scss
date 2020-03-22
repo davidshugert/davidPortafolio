@@ -26,10 +26,9 @@
     grid-template-areas:
       "photo title"
       "message message";
-    border: 5px solid black;
     border-radius: 20px;
     max-width: 625px;
-    background-color: lightblue;
+    background-color: #dedede45;
     grid-row-gap: 0.8em;
     margin: 10px auto;
   }
