@@ -69,8 +69,6 @@ const ProjectTemplate = props => {
         return <Text>{children}</Text>
       },
       [BLOCKS.UL_LIST]: (node, children) => {
-        console.log(node)
-        console.log(children)
         return <ul className={projectStyles.ul}>{children}</ul>
       },
     },

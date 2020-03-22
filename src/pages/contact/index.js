@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/Layout"
-import Head from "../components/Head"
+import Layout from "../../components/Layout"
+import Head from "../../components/Head"
 import styled from "styled-components"
 import contactStyles from "./contact.module.scss"
-import { media } from "../utils/styles"
+import { media } from "../../utils/styles"
 
 const FormStyled = styled.form`
   padding: 2em;
@@ -37,7 +37,8 @@ const Contact = () => {
           </h2>
         </section>
         <FormContainer>
-          <FormStyled action="POST" data-netlify="true" netlify name="ContactForm">
+          <FormStyled method="post" action="/contact/thanks/" data-netlify="true" netlify name="ContactForm">
+          <input type="hidden" name="form-name" value="contact" />
             <div className="field">
               <label className="label" htmlFor="name">
                 Name:
