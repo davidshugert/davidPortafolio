@@ -30,18 +30,18 @@ const Contact = () => {
 
       <div className="container">
         <section className={contactStyles.section}>
-          <h1 class="title">Get in touch with me</h1>
-          <h2 class="subtitle">
+          <h1 className="title">Get in touch with me</h1>
+          <h2 className="subtitle">
             Email:
             <a href="mailto:shugertdavid@gmail.com">shugertdavid@gmail.com</a>
           </h2>
         </section>
         <FormContainer>
-          <FormStyled data-netlify="true" netlify name="ContactForm">
-            <div class="field">
-              <label class="label" for="name">
+          <FormStyled action="POST" data-netlify="true" netlify name="ContactForm">
+            <div className="field">
+              <label className="label" htmlFor="name">
                 Name:
-                <div class="control">
+                <div className="control">
                   <input
                     className={`input ${contactStyles.name}`}
                     type="text"
@@ -54,10 +54,10 @@ const Contact = () => {
               </label>
             </div>
 
-            <div class="field">
-              <label class="label" for="email">
+            <div className="field">
+              <label className="label" htmlFor="email">
                 Email:
-                <div class="control has-icons-left has-icons-right">
+                <div className="control has-icons-left has-icons-right">
                   <input
                     className={`input ${contactStyles.email}`}
                     type="email"
@@ -70,10 +70,10 @@ const Contact = () => {
               </label>
             </div>
 
-            <div class="field">
-              <label class="label" for="message">
+            <div className="field">
+              <label className="label" htmlFor="message">
                 Message:
-                <div class="control" className={contactStyles.message}>
+                <div className="control" className={contactStyles.message}>
                   <textarea
                     className={`textarea`}
                     placeholder="Add your message here...."
@@ -85,9 +85,9 @@ const Contact = () => {
               </label>
             </div>
 
-            <div class="field is-grouped">
-              <div class="control">
-                <button class="button is-link" type="submit">
+            <div className="field is-grouped">
+              <div className="control">
+                <button className="button is-link" type="submit">
                   Submit
                 </button>
               </div>
