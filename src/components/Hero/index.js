@@ -17,7 +17,7 @@ export default () => {
     query {
       imageSharp(original: { src: { regex: "/home/" } }) {
         id
-        fluid(maxWidth: 680, quality: 80) {
+        fluid(maxWidth: 680, quality: 50) {
           ...GatsbyImageSharpFluid
         }
       }
