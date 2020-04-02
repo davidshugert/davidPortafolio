@@ -32,6 +32,7 @@ const Projects = ({ data }) => {
                 slug={project.slug}
                 description={project.smallDescription.smallDescription}
                 imgSrc={project.projectImage.resize.src}
+                key={project.title}
               />
             )
           })}

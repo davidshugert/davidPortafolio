@@ -45,9 +45,9 @@ const ToolContainer = styled.div`
 const createToolContainer = tools => {
   return tools.map(tool => {
     return (
-      <>
-        <ToolContainer data-tip={tool.description}>{tool.name}</ToolContainer>
-      </>
+      <ToolContainer data-tip={tool.description} key={tool.name}>
+        {tool.name}
+      </ToolContainer>
     )
   })
 }
@@ -65,7 +65,12 @@ const ToolkitSection = params => {
       </SectionTitle>
       <ToolkitContainer>
         {createToolContainer(myTools)}
-        <ReactTooltip clickable={true} effect="solid" type="info" className={toolkitStyles.tooltip} />
+        <ReactTooltip
+          clickable={true}
+          effect="solid"
+          type="info"
+          className={toolkitStyles.tooltip}
+        />
       </ToolkitContainer>
     </ToolkitSectionContainer>
     // </Particles>

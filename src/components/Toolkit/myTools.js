@@ -86,6 +86,9 @@ const myTools = [
   {
     name: "Next Js",
     description: "I´ve built some projects using Next Js. I look forward to getting deeper into the SSR ecosystem.",
+  },{
+    name: "Chat Bots",
+    description: "I´ve built interactive slack chat bots🤖.",
   },
 ]
 
