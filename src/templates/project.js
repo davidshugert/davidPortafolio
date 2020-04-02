@@ -48,7 +48,6 @@ const LinkStyled = styled(Link)`
 const Text = ({ children }) => (
   <p className={projectStyles.paragraph}>{children}</p>
 )
-const LI = ({ children }) => <li className={projectStyles.li}>{children}</li>
 const ProjectTemplate = props => {
   const options = {
     renderNode: {
