@@ -1,9 +1,9 @@
 import React from "react"
 import heroStyles from "./hero.module.scss"
-import { graphql } from "gatsby"
-import HeroImage from "../../images/home.webp"
+import { graphql, useStaticQuery } from "gatsby"
 import Typist from "react-typist"
 import styled from "styled-components"
+import Img from "gatsby-image"
 
 const TypistStyled = styled(Typist)`
   letter-spacing: 8px;
@@ -11,14 +11,27 @@ const TypistStyled = styled(Typist)`
   margin-top: 1em;
   margin-bottom: 1em;
 `
-const Hero = data => {
+export default () => {
   const delay = 500
+  const data = useStaticQuery(graphql`
+    query {
+      imageSharp(original: { src: { regex: "/home/" } }) {
+        id
+        fluid(maxWidth: 680, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  `)
   return (
     <div className={`container ${heroStyles.container}`}>
       <div
         className={`columns is-vcentered is-centered ${heroStyles.container}`}
       >
-        <img src={HeroImage} className="column is-half" alt="David´s Hero" />
+        <div className="column is-half">
+          <Img fluid={data.imageSharp.fluid} alt="David´s Hero" />
+        </div>
+
         <div
           className={`column is-half is-size-3 is-size-4-mobile has-text-centered`}
         >
@@ -47,15 +60,3 @@ const Hero = data => {
     </div>
   )
 }
-export default Hero
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "src/images/home.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
