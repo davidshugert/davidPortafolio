@@ -1,7 +1,7 @@
 @import "~bulma/bulma.sass";
 
 @mixin md {
-  @media (max-width: 750px) {
+  @media (max-width: 870px) {
     @content;
   }
 }

@@ -17,7 +17,7 @@ const ProjectsSection = props => {
           }
           projectImage {
             title
-            resize(width: 200, quality: 100) {
+            resize(width: 200, quality: 80) {
               src
             }
           }

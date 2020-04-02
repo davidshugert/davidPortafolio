@@ -6,7 +6,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 const TypistStyled = styled(Typist)`
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   text-transform: uppercase;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -17,7 +17,7 @@ export default () => {
     query {
       imageSharp(original: { src: { regex: "/home/" } }) {
         id
-        fluid(maxWidth: 680, quality: 50) {
+        fluid(maxWidth: 680, quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -33,7 +33,7 @@ export default () => {
         </div>
 
         <div
-          className={`column is-half is-size-3 is-size-4-mobile has-text-centered`}
+          className={`column is-half is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-centered`}
         >
           <p>
             Hello! I´m <b>David Shugert</b> a Fullstack Developer based in
@@ -43,7 +43,6 @@ export default () => {
             cursor={{ show: false }}
             avgTypingDelay={100}
             stdTypingDelay={15}
-            className={`is-size-2 is-size-3-mobile`}
           >
             <strong>I create </strong> Websites
             <Typist.Backspace count={9} delay={delay} />
