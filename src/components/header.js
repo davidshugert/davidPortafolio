@@ -53,7 +53,7 @@ const Header = () => {
       <div className="navbar-brand">
         <Link className="navbar-item is-paddingless" to="/">
           <img
-            src="/images/Logo/cover.webp"
+            src="/images/Logo/cover_small.png"
             alt="Logo"
             className={headerStyle.logo}
           />
