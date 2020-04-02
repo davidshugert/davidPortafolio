@@ -19,7 +19,6 @@ module.exports = {
     },
   },
   plugins: [
-    "gatsby-plugin-sass",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -36,6 +35,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    "gatsby-plugin-sass",
     {
       resolve: `gatsby-source-contentful`,
       options: {

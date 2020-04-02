@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import myTools from "./myTools"
-import Particles from "react-particles-js"
-import config from "./particleConfig.JS"
 import { media } from "../../utils/styles"
 import ReactTooltip from "react-tooltip"
 import toolkitStyles from "./toolkit.module.scss"
