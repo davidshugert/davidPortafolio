@@ -62,6 +62,15 @@ const ProjectTemplate = props => {
       [BLOCKS.HEADING_1]: node => {
         return <h1 className={`title is-2`}>{node.content[0].value}</h1>
       },
+      [BLOCKS.HEADING_2]: node => {
+        return <h1 className={`title is-3`}>{node.content[0].value}</h1>
+      },
+      [BLOCKS.HEADING_3]: node => {
+        return <h1 className={`title is-4`}>{node.content[0].value}</h1>
+      },
+      [BLOCKS.HEADING_4]: node => {
+        return <h1 className={`title is-5`}>{node.content[0].value}</h1>
+      },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         return <Text>{children}</Text>
       },

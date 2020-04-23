@@ -8,7 +8,7 @@ import ProjectsStyles from "./projectsSection.module.scss"
 const ProjectsSection = props => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProjects(limit: 3) {
+      allContentfulProjects(limit: 3, filter:{isFeatured:{eq:true}}) {
         nodes {
           title
           slug

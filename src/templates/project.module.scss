@@ -67,6 +67,7 @@
   flex-direction: column;
   z-index: 2;
   background-color: var(--bg-color);
+  padding-bottom: 10px;
   min-height: 600px;
   -webkit-box-shadow: -4px -9px 70px -30px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -4px -9px 70px -30px rgba(0, 0, 0, 0.75);
@@ -84,6 +85,8 @@
 }
 .paragraph {
   max-width: 85%;
+  text-indent: 1.5em;
+  padding-bottom: 1.2em;
 }
 .li {
   width: 100% !important;

@@ -44,7 +44,7 @@ const Projects = ({ data }) => {
 
 export const query = graphql`
   query {
-    allContentfulProjects {
+    allContentfulProjects(sort:{fields:updatedAt, order:DESC}) {
       nodes {
         title
         slug
