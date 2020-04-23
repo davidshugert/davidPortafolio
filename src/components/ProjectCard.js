@@ -33,10 +33,6 @@ const DescriptionContainer = styled.div`
   padding: 15px 15px 10px 15px;
   width: 100%;
   height: 100%;
-  text-overflow: ellipsis;
-  overflow: scroll;
-  white-space: wrap;
-
 `
 const ProjectTitle = styled.h1`
   color: #2c3e50;
