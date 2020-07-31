@@ -80,7 +80,7 @@ const Contact = () => {
             <div className="field">
               <label className="label" htmlFor="message">
                 Message:
-                <div className="control" className={contactStyles.message}>
+                <div className={`control ${contactStyles.message}`}>
                   <textarea
                     className={`textarea`}
                     placeholder="Add your message here...."
